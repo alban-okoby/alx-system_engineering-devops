@@ -7,8 +7,12 @@
 - Push this screenshot with the right name to GitHub, in either the PNG or JPEG format
 
 ### Ressources
-<br> You can find a best ressource 
-[Sftp - Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server)
+You can find a best ressource 
+[SFTP - Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server) 
+
+## To test your skils 
+
+[CMD - Challenge](https://cmdchallenge.com/) 
 
 <br>
  Have happy learning ✨ <br>
