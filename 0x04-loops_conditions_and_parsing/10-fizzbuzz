@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+for number in {1..100}; do
+  # Check if the number is a multiple of 3 and 5
+  if ((number % 3 == 0)) && ((number % 5 == 0)); then
+    echo "FizzBuzz"
+  # Check if the number is a multiple of 3
+  elif ((number % 3 == 0)); then
+    echo "Fizz"
+  # Check if the number is a multiple of 5
+  elif ((number % 5 == 0)); then
+    echo "Buzz"
+  # Otherwise, display the number
+  else
+    echo "$number"
+  fi
+done
