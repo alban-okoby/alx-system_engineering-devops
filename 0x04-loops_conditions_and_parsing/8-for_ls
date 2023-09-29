@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-the_list=$(ls)
-for i in $the_list; do
-  echo "$i" | cut -d '-' -f2
+for file in *
+  do
+  if [[ ! "$file" == .* ]]
+  then
+    name_after_dash=$(echo "$file" | awk -F '-' '{print $2}')
+    
+    echo "$name_after_dash"
+  fi
 done
