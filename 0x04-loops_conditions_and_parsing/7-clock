@@ -8,9 +8,10 @@ hour=0
 while [ $hour -le 12 ]
 do
 	echo "Hour: $hour"
+	minute=1
 	for minute in {1..59}
 	do
 		echo "$minute"
 	done
 	((hour++))
-done | head -n 70
+done
