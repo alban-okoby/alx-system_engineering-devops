@@ -7,7 +7,7 @@
 - How many layers it has
 - How it is organized
 
-<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/4e6a0ad87a65d7054248.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231005%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231005T073421Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5d38422303964fe352f6e2fdbd608066c11eb9303450136e7bf02cd459cb6bcb" alt="OSI MODEL" />
+<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/4b995d4f8078b44afa968d68a98035d2bd7e8fac.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231005%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231005T083241Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=adcdd5ff6dfbd6dbbc9da5de082d63cc098b54d70de922e1546c54ddea25ed0f" alt="OSI MODEL" />
 
 ### What is a LAN
 - Typical usage
