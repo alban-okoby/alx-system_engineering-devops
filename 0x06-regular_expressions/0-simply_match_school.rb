@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 # Check if the argument matches the regular expression /School/
 def check_match(input)
   pattern = /School/
