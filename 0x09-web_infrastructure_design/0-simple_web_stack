@@ -1,0 +1,9 @@
+https://github.com/alban-okoby/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/alx_simple_web_infrastructure_design_okk.png
+
+- The user's computer initiates the request.
+- The DNS server resolves the domain name "www.foobar.com" to the IP address 8.8.8.8.
+- The user's web browser sends an HTTP request to that IP.
+- The web server (Nginx) handles incoming requests and can serve static content directly.
+- Dynamic requests are passed on to the application server.
+- The application server communicates with the database to fetch or update data.
+- The web server compiles the response and sends it back to the user's web browser for display.
