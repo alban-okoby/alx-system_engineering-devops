@@ -1,0 +1,25 @@
+[ distributed ](https://github.com/alban-okoby/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/alx_distributed_web_infrastructure_design_okk.PNG)
+
+- User's Computer: The source of the request, typically using a web browser to access the website.
+
+- DNS Server: Resolves the domain name "www.foobar.com" to an IP address (e.g., the Load Balancer's IP).
+
+- Web Browser: The user's web browser initiates the request.
+
+- www.foobar.com: The user accesses the website via the domain name.
+
+- Load Balancer: Distributes incoming traffic between Server 1 and Server 2, using a round-robin distribution algorithm. This provides load balancing for better performance and redundancy. If one server fails, the load balancer routes traffic to the other.
+
+### Server 1 (Primary):
+
+[x] - Nginx: Serves as the web server, handling incoming HTTP requests.
+[x] - App Server: Processes dynamic content requests and executes the website's codebase.
+[x] - Application Files (Code Base): Contains the website's code and assets.
+[x] - Database (MySQL - Primary): Handles database read and write operations.
+### Server 2 (Replica):
+
+[x] - App Server: A secondary application server for redundancy.
+[x] - Database (MySQL - Replica): Replicates data from the Primary database and can take over if the Primary fails (Active-Passive setup).
+[x] - Database (MySQL - Primary): The primary database server on Server 1 is responsible for handling all write operations (INSERT, UPDATE, DELETE) and read operations.
+
+[x] - Database (MySQL - Replica): The replica database on Server 2 replicates data from the Primary server and stands by for failover. It's used for read operations to distribute the load and improve performance.
