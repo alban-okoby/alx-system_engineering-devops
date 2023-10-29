@@ -1,4 +1,4 @@
-<mxfile modified="2023-10-29T16:46:20.188Z" host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="8AF6hELcjEdeFfxx5Wdc" version="22.0.8" type="github" pages="3">
+<mxfile modified="2023-10-29T16:50:07.836Z" host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="fFA2Iky2NrTZHYCWOvYQ" version="22.0.8" type="github" pages="3">
   <diagram id="l8hXMBHkgcEJcSW0mbfh" name="Page-1">
     <mxGraphModel dx="1050" dy="691" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -226,7 +226,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="1-distributed_web_infrastructure" id="YgQA0E7Tto5fLiBlxd3E">
-    <mxGraphModel dx="2146" dy="1863" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1500" dy="1814" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="xqDdNOHH6OhE9BaDV7xd-0" />
         <mxCell id="xqDdNOHH6OhE9BaDV7xd-1" parent="xqDdNOHH6OhE9BaDV7xd-0" />
@@ -284,7 +284,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="xqDdNOHH6OhE9BaDV7xd-31" value="&lt;b&gt;By Alban Okoby, &lt;br&gt;ALX Software Engineering&lt;/b&gt;" style="text=white;align=center;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=20;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="xqDdNOHH6OhE9BaDV7xd-1">
-          <mxGeometry x="820" y="-120" width="290" height="60" as="geometry" />
+          <mxGeometry x="825" y="-130" width="290" height="60" as="geometry" />
         </mxCell>
         <mxCell id="xqDdNOHH6OhE9BaDV7xd-32" value="Distributed_web_infrastructure" style="text;strokeColor=#432D57;align=center;fillColor=#76608a;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=26;fontColor=#ffffff;" vertex="1" parent="xqDdNOHH6OhE9BaDV7xd-1">
           <mxGeometry x="365.21" y="-180" width="380" height="100" as="geometry" />
@@ -372,6 +372,9 @@
             <mxPoint x="929.94383420128" y="363.05856804733685" as="targetPoint" />
             <mxPoint x="930" y="303" as="sourcePoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="cJ2oHsDJEfoyKOnKyrQ6-46" value="https://alban-okoby/github.com&lt;br style=&quot;font-size: 20px;&quot;&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;" vertex="1" parent="xqDdNOHH6OhE9BaDV7xd-1">
+          <mxGeometry x="825" y="-70" width="300" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
