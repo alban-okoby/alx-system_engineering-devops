@@ -1,0 +1,10 @@
+#!/bin/bash/env bash
+
+apt-get update
+apt-get install -y nginx
+mkdir -p /var/www/html
+echo "Hello World!" > /var/www/html/index.html
+# Now Restart Nginx
+service nginx restart
+
+

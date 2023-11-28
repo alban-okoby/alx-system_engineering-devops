@@ -1,8 +1,12 @@
-#!/bin/bash/env bash
+#!/usr/bin/env bash
 
+#!/bin/bash
+
+# Update package list and install nginx
 apt-get update
 apt-get install -y nginx
 
+# Create a custom Nginx configuration for redirection
 cat > /etc/nginx/sites-available/default << EOL
 server {
     listen 80 default_server;
@@ -17,13 +21,11 @@ server {
         try_files \$uri \$uri/ =404;
     }
 
-    location = / {
-        echo "Hello World!";
+    location = /redirect_me {
+        return 301 http://your-redirected-url;
     }
 }
 EOL
 
-mkdir -p /var/www/html
-echo "Hello World!" > /var/www/html/index.html
-
 service nginx restart
+
