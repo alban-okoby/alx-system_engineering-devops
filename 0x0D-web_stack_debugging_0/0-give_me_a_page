@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# To run apache on the designated container
+
+echo "ServerName localhost" >> /etc/apache2.conf
+
+# To start apache service
+service apache2 start
