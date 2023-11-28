@@ -1,12 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash/env bash
 
-#!/bin/bash
-
-# Update package list and install nginx
 apt-get update
 apt-get install -y nginx
 
-# Create a custom Nginx configuration for redirection
 cat > /etc/nginx/sites-available/default << EOL
 server {
     listen 80 default_server;
@@ -21,11 +17,15 @@ server {
         try_files \$uri \$uri/ =404;
     }
 
-    location = /redirect_me {
-        return 301 http://https://github.com/alban-okoby;
+    error_page 404 /404.html;
+    location = /404.html {
+        root /var/www/html;
+        internal;
     }
 }
 EOL
+
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 service nginx restart
 
