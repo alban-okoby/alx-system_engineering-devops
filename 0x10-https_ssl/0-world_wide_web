@@ -1,43 +1,28 @@
 #!/usr/bin/env bash
-# Configure your domain zone so that the subdomain www points to
-#your load-balancer IP (lb-01).
-display_info() {
-    local subdomain=$1
-    local record_type=$2
-    local destination=$3
-    echo "The subdomain $subdomain is a $record_type record and points to $destination"
-}
+# Display information about subdomains.
 
-audit_domain() {
-    local domain=$1
-    local subdomains=("www" "lb-01" "web-01" "web-02")
+domain_information () {
+    local domain="$1"
+    local subdomain="$2"
 
-    for subdomain in "${subdomains[@]}"; do
-        record_type=$(dig +short -t A $subdomain.$domain | awk '{print "A"}')
-        destination=$(dig +short $subdomain.$domain)
-
-        [ -n "$destination" ] && display_info "$subdomain" "$record_type" "$destination"
-    done
-}
-
-main() {
-    local domain=$1
-    local subdomain=$2
-
-    if [ -z "$subdomain" ]; then
-        audit_domain "$domain"
+    local line
+    line=$(dig "${subdomain}.${domain}" +short | awk '{printf "%s ", $0}')
+    
+    if [ -n "$line" ]; then
+        echo "The subdomain ${subdomain} is a ${line}record and points to ${line}"
     else
-        record_type=$(dig +short -t A $subdomain.$domain | awk '{print "A"}')
-        destination=$(dig +short $subdomain.$domain)
-
-        [ -n "$destination" ] && display_info "$subdomain" "$record_type" "$destination"
+        echo "No information found for subdomain ${subdomain}"
     fi
 }
 
-# Check if the required arguments are provided
-if [ "$#" -lt 1 ]; then
+if [ "$#" == 1 ]; then
+    subdomains=("www" "lb-01" "web-01" "web-02")
+    for subdomain in "${subdomains[@]}"; do
+        domain_information "$1" "${subdomain}"
+    done
+elif [ "$#" == 2 ]; then
+    domain_information "$1" "$2"
+else
     echo "Usage: $0 <domain> [subdomain]"
     exit 1
 fi
-
-main "$@"
