@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Nginx server to listen on port 80
+# Create a symbolic link for the default Nginx site configuration
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+service nginx start
+
+# Find and kill the first 'nginx' process
+nginx_pid=$(pgrep 'nginx' | head -1)
+if [ -n "$nginx_pid" ]; then
+    kill "$nginx_pid"
+fi
