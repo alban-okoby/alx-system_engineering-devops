@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+if [ "$EUID" -ne 0 ]; then
+    echo "Please run this script as root or with sudo."
+    exit 1
+fi
+
+sed -i 's/^user .*/user nginx;/g' /etc/nginx/nginx.conf
+
+te configuration to listen on all active IPs on port 8080
+cat > /etc/nginx/sites-available/default <<EOL
+server {
+    listen 8080 default_server;
+    listen [::]:8080 default_server ipv6only=on;
+
+    root /var/www/html;
+    index index.html index.htm;
+
+    server_name _;
+
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}
+EOL
+
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+systemctl restart nginx
+
+echo "Nginx has been configured to run as the nginx user, and it is now listening on all active IPs on port 8080."
