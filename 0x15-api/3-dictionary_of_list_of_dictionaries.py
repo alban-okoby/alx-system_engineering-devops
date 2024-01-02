@@ -29,7 +29,7 @@ def get_all_employees_todo():
     with open(json_file_path, 'w') as jsonfile:
         json.dump(all_tasks, jsonfile)
 
-    print(f"\nData exported to {json_file_path}")
+#    print(f"\nData exported to {json_file_path}")
 
 
 if __name__ == "__main__":
