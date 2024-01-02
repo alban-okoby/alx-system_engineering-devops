@@ -1,14 +1,33 @@
 #!/usr/bin/python3
-""" SCript that return information for given employee ID"""
+"""The information list for a given employee ID"""
 import requests
 import sys
 
-if __name__ == "__main__":
-    url = "https://jsonplaceholder.typicode.com/"
-    user = requests.get(url + "users/{}".format(sys.argv[1])).json()
-    todos = requests.get(url + "todos", params={"userId": sys.argv[1]}).json()
 
-    completed = [t.get("title") for t in todos if t.get("completed") is True]
-    print("Employee {} is done with tasks({}/{}):".format(
-        user.get("name"), len(completed), len(todos)))
-    [print("\t {}".format(c)) for c in completed]
+def get_todo_list_progress(employee_id):
+    api_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
+
+    response = requests.get(api_url)
+    user_data = response.json()
+
+    td_url = f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
+    todo_response = requests.get(td_url)
+    todo_data = todo_response.json()
+    total_tasks = len(todo_data)
+    completed_tasks = sum(1 for task in todo_data if task['completed'])
+
+    print(f"Employee {user_data['name']} is done with tasks"
+          f"({completed_tasks}/{total_tasks}):")
+
+    for task in todo_data:
+        if task['completed']:
+            print(f"\t {task['title']}")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <employee_id>")
+        sys.exit(1)
+
+    employee_id = int(sys.argv[1])
+    get_todo_list_progress(employee_id)
