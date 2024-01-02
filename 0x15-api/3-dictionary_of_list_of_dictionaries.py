@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Dictionary of list of dictionaries"""
-import requests
 import json
+import requests
 
 
 def get_all_employees_todo():
