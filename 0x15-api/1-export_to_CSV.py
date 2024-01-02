@@ -1,42 +1,20 @@
-#!/bin/usr/python3
-"""Exports information list to CSV format"""
+#!/usr/bin/python3
+"""Exports information employee to CSV format"""
+import csv
 import requests
 import sys
-import csv
-
-
-def get_todo_list_progress(employee_id):
-    api_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
-
-    response = requests.get(api_url)
-    user_data = response.json()
-    td_url = f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
-    todo_response = requests.get(td_url)
-    todo_data = todo_response.json()
-    total_tasks = len(todo_data)
-    completed_tasks = sum(1 for task in todo_data if task['completed'])
-
-    print(f"Employee {user_data['name']} is done with tasks"
-          f"({completed_tasks}/{total_tasks}):")
-
-    csv_file_path = f"{user_data['id']}.csv"
-    with open(csv_file_path, 'w', newline='') as csvfile:
-        csv_writer = csv.writer(csvfile)
-        csv_writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS",
-            "TASK_TITLE"])
-
-        for task in todo_data:
-            csv_writer.writerow([user_data['id'], user_data['username'],
-                        task['completed'], task['title']])
-            if task['completed']:
-                print(f"\t {task['title']}")
-    print(f"\nData exported to {csv_file_path}")
-
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <employee_id>")
-        sys.exit(1)
+    user_id = sys.argv[1]
+    api_url = "https://jsonplaceholder.typicode.com/"
+    
+    user = requests.get(api_url + "users/{}".format(user_id)).json()
+    username = user.get("username")
+    
+    todos = requests.get(api_url + "todos", params={"userId": user_id}).json()
 
-    employee_id = int(sys.argv[1])
-    get_todo_list_progress(employee_id)
+    with open("{}.csv".format(user_id), "w", newline="") as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        for t in todos:
+            writer.writerow(
+                    [user_id, username, t.get("completed"), t.get("title")])
