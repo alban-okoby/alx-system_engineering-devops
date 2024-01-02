@@ -26,8 +26,7 @@ def get_todo_list_progress(employee_id):
             "TASK_TITLE"])
 
         for task in todo_data:
-            csv_writer.writerow(
-                    [user_data['id'], user_data['username'],
+            csv_writer.writerow([user_data['id'], user_data['username'],
                         task['completed'], task['title']])
             if task['completed']:
                 print(f"\t {task['title']}")

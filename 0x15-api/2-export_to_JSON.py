@@ -31,6 +31,7 @@ def get_todo_list_progress(employee_id):
 
     print(f"\nData exported to {json_file_path}")
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script.py <employee_id>")
